@@ -3,6 +3,7 @@
     <h1> 你好 欢迎你  {{ username }} </h1>
 
     <button @click="register">注册axios请求</button>
+    <p class="font-gray">全局less属性控制 </p>
   </section>
 </template>
 

@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-container>
-      <el-header>Header</el-header>
+      <el-header class="font-gray">Header</el-header>
       <el-container>
         <el-aside width="200px">Aside</el-aside>
         <el-main>  <nuxt/> </el-main>
@@ -14,6 +14,7 @@
 
 <script>
 import url from '~/static/index'
+import '~/assets/style/common.less'
 
 export default {
   data() {
