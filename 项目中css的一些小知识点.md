@@ -282,3 +282,93 @@
 	}
 
 步骤如下 info 定义一个flex盒子，盒子两端平分（justify-contetn）,垂直居中（align-items）, 接着定义用户头像， 然后定义 登陆，从图中可以看出来只有中间那一块的宽度是可以变化的所以我们会给他定义flex，flex主要是定义元素占复原空间的比例。 这里我让他 放大占一份，缩小占一份。 然后给他个宽度 可以防止他抢占其他元素的空间。如果不给的话，当你content里面内容过长的时候他会去掠夺其他元素的空间。
+
+
+> 左右格局布局方法
+
+虽然flex的布局非常方便，但是会让元素的一些属性失去作用，并且flex的布局方式局
+限在justify-content属性的几个值。 
+
+有时候在元素结构只有左， 中，右结构的时候，并且元素空间是知道大小的，不是无限增长的这时候
+用float 布局会更加灵活， 像头部的组件， li元素等；
+    
+    
+    <         中国      返回
+    
+    html
+    <div class="title">
+		<span class="title-left"><</span>
+		<span class="title-content">中国</span>
+		<span class="title-right">返回</span>
+	</div>
+	
+	css
+	
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	.title {
+		text-align: center;
+		overflow: hidden;
+	}
+	
+	.title-left {
+		float: left;
+	}
+	
+	.title-content {
+	
+	}
+	
+	.title-right {
+		float: right;
+	}
+
+因为使用float布局会导致父元素高度失去， 使用overflow 或者添加 clearfix类都可以解决此类问题。
+
+如果使用了定位属性会让定位元素失去宽度，变成行内元素。所以每次使用定位的时候都要记得加上 width: 100%;属性。
+
+
+> 评论列表，元素重叠式布局方式
+
+    html
+    <div class="box">
+		<img src="" alt="" class="avatar"/>
+		<div class="comment-body">
+		    国务院台湾事务办公室定于9月12日（周三）上午10:00在国台
+		    办新闻发布厅（广安门南街6-1号广安大
+		    厦中门四层）举行例行新闻发布会。
+		    [安峰山]:各位记者朋友，大家上午好。欢迎大家出席今天上午国台办举行的例行新闻发布会，
+		    下面我愿意接受大家的提问。
+		    [中央广电总台央视“中国新闻”]:日前，台湾“独派”团体“喜乐岛联盟
+		    ”举办记者会，主张通过公投将“中华民国”改为“台湾”，并称将于
+		    10月20日聚集10万民众游行。请问对此有何评论？
+		</div>
+	</div>
+	
+	css
+	
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	.box{
+		width: 100%;
+	}
+	.avatar {
+		width: 80px;
+		height: 80px;
+		border-radius: 50%;
+		border: 1px solid #ccc;
+		overflow: hidden;
+	}
+	.comment-body {
+		margin-top: -80px;
+		padding: 0 0 0 100px;
+	}
+
+当我们遇到类似评论布局的时候， 这种重叠在一起的布局方式非常好用。 元素的构成主要是 content + padding + border + margin.其中 padding 和 margin的值都可以为负数， 为负数向相反的方向移动。而元素的层级为依次往下增长，所以comment-body会在头像的上面。 
+
+这种布局主要运用向上 -80 去让元素偏移80像素， 然后再padding去让元素的内容在规定的区域显示。
+    
