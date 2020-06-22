@@ -1,0 +1,22 @@
+html, body, div,p,span, ul,li,a,i,img,h1,h2,h3,h4,button, input, textarea,sup,table,th,tr,td {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+a, button, input,textarea {
+	outline: none;
+	text-decoration: none;
+}
+
+textarea {
+	resize: none;
+}
+
+i {
+	font-style: initial;
+}
+
+ul li {
+	list-style: none;
+}
