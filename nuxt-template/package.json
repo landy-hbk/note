@@ -15,17 +15,17 @@
   "dependencies": {
     "axios": "^0.18.0",
     "element-ui": "^2.4.1",
-    "nuxt": "^1.0.0"
+    "nuxt": "^3.0.0"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
-    "css-loader": "^1.0.0",
+    "css-loader": "^6.7.3",
     "eslint": "^4.15.0",
     "eslint-friendly-formatter": "^3.0.0",
-    "eslint-loader": "^1.7.1",
+    "eslint-loader": "^4.0.2",
     "eslint-plugin-vue": "^4.0.0",
     "less": "^3.8.1",
-    "less-loader": "^4.1.0",
-    "style-loader": "^0.22.1"
+    "less-loader": "^11.1.0",
+    "style-loader": "^3.3.1"
   }
 }
